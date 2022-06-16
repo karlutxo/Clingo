@@ -5,6 +5,9 @@ from django.db import models
 
 class Verb(models.Model):
     Infinitive = models.CharField(max_length=30)
-    order = models.IntegerField
-    group = models.IntegerField
+    order = models.IntegerField()
+    group = models.IntegerField(default=3)
     lang = models.CharField(max_length=2, default='fr')
+
+    def __str__(self):
+        return self.Infinitive
